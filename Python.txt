@@ -1,0 +1,581 @@
+
+Number Manipulation and F strings
+
+print(8 / 3)
+:- 2.6666666666666665
+
+print(int(8 / 3))
+:- 2
+
+print(round(8 / 3))
+:- 3
+
+print(8 // 3)
+:- 2
+
+score = 0
+height = 1.95
+isWinning = True
+
+print (f"Your score is {score} and height is {height}, and you are winning is {isWinning}")
+:- Your score is 0 and height is 1.95, and you are winning is True
+
+HANDS-ON (TIP CALCULATOR)
+
+print("Welcome to the tip calculator.")
+bill = float(input("What was the total bill? $"))
+tip = int(input("What percantage tip would you like to give? 10, 12, or 15? "))
+people = int(input("How many people to split the bill? "))
+tip_percent = tip / 100
+tip_amt = tip_percent * bill
+total_bill = bill + tip_amt
+per_person = total_bill / 5
+final_amt = round(per_person, 2)
+print(f"Each person should pay: ${final_amt}")
+
+:- 
+Welcome to the tip calculator.
+What was the total bill? $153.45
+What percantage tip would you like to give? 10, 12, or 15? 15
+How many people to split the bill? 5
+Each person should pay: $35.29
+
+
+----------------------------------------------------------------------------------------------------------------
+
+SECTION 3
+
+If Else
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+else:
+  print("Sorry, you are not tall enough to ride the rollercoaster.")
+
+
+
+Nested If Else
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+bill = 0
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+  age = int(input("What is your age? "))
+  if age < 12:
+    bill = 5
+    print("Child tickets are $5.")
+  elif age <= 18:
+    bill = 7
+    print("Youth tickets are $7.")
+  elif age >= 45 and age <= 55:
+    print("Everything is going to be ok. Have a free ride on us!")
+  else:
+    bill = 12
+    print("Adult tickets are $12.")
+  
+  wants_photo = input("Do you want a photo taken? Y or N. ")
+  if wants_photo == "Y":
+    bill += 3
+  
+  print(f"Your final bill is ${bill}")
+
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
+
+HANDS-ON (TREASURE ISLAND)
+
+
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.") 
+
+choice1 = input('You are at a cross road. Where do you want to go? Type "left" or "right"\n').lower()
+if choice1 == 'left':
+    choice2 = input(
+        'You are at a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across.\n').lower()
+    if choice2 == 'wait':
+        choice3 = input(
+            'You arrived at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose?\n').lower()
+
+        if choice3 == 'red':
+            print('You are dead!')
+
+        elif choice3 == 'yellow':
+            print('You are dead!')
+
+        elif choice3 == 'blue':
+            print('You won the game!')
+
+        else:
+            print('Invalid choice.')
+
+    elif choice2 == 'swim':
+        print('You are dead!')
+
+    else:
+        print('Invalid choice.')
+
+else:
+    print('Invalid choice.')
+
+:- 
+
+Welcome to Treasure Island.
+Your mission is to find the treasure.
+You are at a cross road. Where do you want to go? Type "left" or "right"
+left
+You are at a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across.
+wait
+You arrived at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose?
+blue
+You won the game!
+
+---------------------------------------------------------------------------------------------------------------
+
+
+SECTION 4
+
+RANDOM MODULE
+
+import random
+
+random_integer = random.randint(1, 10)
+print(random_integer)
+
+random_float = random.random()
+print(random_float)
+
+random_float1 = random.random() * 5
+print(random_float1)
+
+:-
+4
+0.7878052006509937
+4.608527092790061
+
+LISTS
+
+fruits = ["Cherry", "Apple", "Banana", "Orange"]
+print(random.choice(fruits))
+
+print(fruits[1])
+
+fruits[2] = "Pear"
+print(fruits)
+
+:-
+
+Orange
+Apple
+['Cherry', 'Apple', 'Pear', 'Orange']
+
+
+HANDS-ON (ROCK PAPER SCISSORS)
+
+import random
+
+choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. "))
+computer_choice = random.randint(0,2)
+
+if choice == 0:
+  print(rock)
+  if computer_choice == 0:
+    print(rock)
+    print("Tie")
+  elif computer_choice == 1:
+    print(paper)
+    print("You lose")
+  else:
+    print(scissors)
+    print("You win")
+elif choice == 1:
+  print(paper)
+  if computer_choice == 0:
+    print(rock)
+    print("You win")
+  elif computer_choice == 1:
+    print(paper)
+    print("Tie")
+  else:
+    print(scissors)
+    print("You lose")
+else:
+  print(scissors)
+  if computer_choice == 0:
+    print(rock)
+    print("You lose")
+  elif computer_choice == 1:
+    print(paper)
+    print("You win")
+  else:
+    print(scissors)
+    print("Tie")
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+SECTION 5
+
+fruits = ["Apple", "Peach", "Pear"]
+for fruit in fruits:
+  print(fruit)
+  print(fruit + " Pie")
+  print(fruits)
+
+:-
+
+Apple
+Apple Pie
+['Apple', 'Peach', 'Pear']
+Peach
+Peach Pie
+['Apple', 'Peach', 'Pear']
+Pear
+Pear Pie
+['Apple', 'Peach', 'Pear']
+
+RANGE
+
+for number in range(1,10):
+  print(number)
+
+for number in range(1,11):
+  print(number)
+
+for number in range(1,11,3):
+  print(number)
+
+total = 0
+for number in range(1,101):
+  total += number
+print(total)
+
+HANDS-ON (Py Password Generator)
+
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+          'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
+          'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+          'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the PyPassword Generator!")
+nr_letters= int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+#Eazy Level - Order not randomised:
+#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
+password = ""
+for char in range (1, nr_letters + 1):
+  password += random.choice(letters)
+for sym in range (1, nr_symbols + 1):
+  password += random.choice(symbols)
+for num in range (1, nr_numbers + 1):
+  password += random.choice(numbers)
+print(f"Your password is: {password}")
+
+#Hard Level - Order of characters randomised:
+#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+password_list = []
+for char in range (1, nr_letters + 1):
+  password_list.append(random.choice(letters))
+for sym in range (1, nr_symbols + 1):
+  password_list.append(random.choice(symbols))
+for num in range (1, nr_numbers + 1):
+  password_list.append(random.choice(numbers))
+random.shuffle(password_list)
+password = "".join(password_list)
+print(f"Your password is: {password}")
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+SECTION 6
+
+def turn_around():
+    turn_left()
+    turn_left()
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+def jump():
+    move()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+    
+for step in range(6):
+    jump()
+    
+number_of_hurdles = 6
+
+while number_of_hurdles > 0:
+    jump()
+    number_of_hurdles -= 1
+
+while at_goal() != True:
+    jump()
+
+while at_goal() != True:
+    if wall_in_front() == True:
+        jump()
+    else:
+        move()
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+SECTION 8
+
+def greet():
+  print("Hello Vinay")
+  print("How are you Vinay?")
+  print("Isn't the weather nice today")
+
+greet()
+
+def greet_with_name(name):
+  print(f"Hello {name}")
+  print(f"How are you {name}?")
+  print("Isn't the weather nice today")
+
+greet_with_name("Angela")
+
+:- 
+
+Hello Vinay
+How are you Vinay?
+Isn't the weather nice today
+Hello Angela
+How are you Angela?
+Isn't the weather nice today
+
+
+
+
+POSITIONAL ARGUMENTS
+
+def greet_with(name, location):
+  print(f"Hello {name}")
+  print(f"How are you {name}?")
+  print(f"Isn't the weather nice today in {location}")
+
+greet_with("Vinay", "New York")
+
+:-
+
+Hello Vinay
+How are you Vinay?
+Isn't the weather nice today in New York
+
+
+
+
+KEYWORD ARGUMENTS
+
+def greet_with(name, location):
+  print(f"Hello {name}")
+  print(f"How are you {name}?")
+  print(f"Isn't the weather nice today in {location}")
+
+greet_with(location= "New York", name = "Vinay")
+
+:-
+
+Hello Vinay
+How are you Vinay?
+Isn't the weather nice today in New York
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+SECTION 9
+
+Python Dictionaries
+
+programming_dictionary = {
+  "Bug": "An error in a program that prevents the program from running as expected.", 
+  "Function": "A piece of code that you can easily call over and over again.",
+}
+
+#Retrieving items from dictionary.
+# print(programming_dictionary["Function"])
+
+#Adding new items to dictionary.
+programming_dictionary["Loop"] = "The action of doing something over and over again."
+
+#Create an empty dictionary.
+empty_dictionary = {}
+
+#Wipe an existing dictionary
+# programming_dictionary = {}
+# print(programming_dictionary)
+
+#Edit an item in a dictionary
+programming_dictionary["Bug"] = "A moth in your computer."
+# print(programming_dictionary)
+
+#Loop through a dictionary
+# for key in programming_dictionary:
+#   print(key)
+#   print(programming_dictionary[key])
+
+#######################################
+
+#Nesting 
+capitals = {
+  "France": "Paris",
+  "Germany": "Berlin",
+}
+
+#Nesting a List in a Dictionary
+
+travel_log = {
+  "France": ["Paris", "Lille", "Dijon"],
+  "Germany": ["Berlin", "Hamburg", "Stuttgart"],
+}
+
+#Nesting Dictionary in a Dictionary
+
+travel_log = {
+  "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
+  "Germany": {"cities_visited": ["Berlin", "Hamburg", "Stuttgart"], "total_visits": 5},
+}
+
+#Nesting Dictionaries in Lists
+
+travel_log = [
+{
+  "country": "France", 
+  "cities_visited": ["Paris", "Lille", "Dijon"], 
+  "total_visits": 12,
+},
+{
+  "country": "Germany",
+  "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+  "total_visits": 5,
+},
+]
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+SECTION 10
+
+
+Functions with output
+
+
+def my_function():
+  return 3 * 2
+
+output = my_function()
+print(output)
+
+:- 6
+
+def format_name():
+  f_name = input("Enter your first name: ")
+  l_name = input("Enter your last name: ")
+  return f"{l_name}, {f_name}"
+
+print(format_name())
+
+
+def format_name(f_name,l_name):
+  if f_name == "" or l_name == "":
+    return "You didn't enter a name"
+  formated_f_name = f_name.title()
+  formated_l_name = l_name.title()
+  return f"{formated_f_name} {formated_l_name}"
+
+print(format_name("Kalpana","RAJesh"))
+
+
+Docstrings
+
+
+def format_name(f_name,l_name):
+  """Returns a formatted name"""
+  if f_name == "" or l_name == "":
+    return "You didn't enter a name"
+  formated_f_name = f_name.title()
+  formated_l_name = l_name.title()
+  return f"{formated_f_name} {formated_l_name}"
+
+print(format_name("Kalpana","RAJesh"))
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+SECTION 12
+
+################### Scope ####################
+
+enemies = 1
+
+def increase_enemies():
+  enemies = 2
+  print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+
+############## Local Scope ####################
+
+def drink_potion():
+  potion_strength = 2
+  print(potion_strength)
+
+drink_potion()
+print(potion_strength)
+
+
+############## Global Scope ####################
+
+player_health = 10
+def drink_potion():
+  potion_strength = 2
+  print(player_health)
+
+drink_potion()
+
+
+############## Block Scope ####################
+
+
+game_level = 3
+def create_enemy():
+  enemies = ["skeleton", "Zombie", "Alien"]
+  if game_level > 5:
+    new_enemy = enemies[0]
+
+    print(new_enemy)
+
+
+
